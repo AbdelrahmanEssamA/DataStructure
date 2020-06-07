@@ -116,7 +116,7 @@ public class lList {
                 
                 currentNode = currentNode.next;
             }
-             System.out.println(pos + " position element is the head: "+currentNode.data );
+             System.out.println(pos + " position element is : "+currentNode.data );
         }
         
     }
@@ -124,7 +124,7 @@ public class lList {
         //if it is the head
         if(list.head.data == data)
         {
-            list.head = list.head.next;
+             
              System.out.println(data + "element is the head at pos 0" );
         }
         
@@ -136,7 +136,7 @@ public class lList {
         }
         //if it is at the middle or the end
         if(currentNode!=null){
-             System.out.println(data + " position element is the head: "+count );
+             System.out.println(data + " position element is: "+count );
         }
         // if it does not exist
         else{
