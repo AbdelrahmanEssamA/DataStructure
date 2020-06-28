@@ -1,6 +1,9 @@
 
 package binarytree;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 class Node{
     int key;
     Node Left;
@@ -13,6 +16,10 @@ public class BST {
         n.Left = null;
         n.right =null;
         return n; 
+    }
+    ArrayList<Integer> l = new ArrayList<>();
+    public void ClearList(){
+        l = new ArrayList<>();
     }
     public Node insert(Node node, int val){
          if (node == null)
@@ -56,28 +63,33 @@ public class BST {
         }
         return node;
     }
-    public void inorder(Node node){
+    public String inorder(Node node){
         if(node == null)
-            return;
+            return null;    
         
         inorder(node.Left);
-        System.out.println(node.key+" ");
+        l.add(node.key);
         inorder(node.right);
+        
+        return l.toString();
+        
     }
-    public void preorder(Node node){
+    public String preorder(Node node){
          if(node == null)
-            return;
-        System.out.println(node.key+" ");
+            return null;
+        l.add(node.key);
         preorder(node.Left);
         preorder(node.right);
+        return l.toString();
     }
-    public void postorder(Node node){
+    public String postorder(Node node){
         if(node == null)
-            return;
+            return null;
         
         postorder(node.Left);
         postorder(node.right);
-        System.out.println(node.key+"");
+        l.add(node.key);
+        return l.toString();
     }
     public boolean isPresent(Node node, int val){
         if(node == null){
@@ -103,7 +115,7 @@ public class BST {
             System.out.println("elment is not present");
         return present;
     }
-    public Node gerParent(Node node, int val){
+    public Node getParent(Node node, int val){
         if(node == null){
             System.out.println("tree is empty");
             return null ;
